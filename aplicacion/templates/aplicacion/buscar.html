@@ -1,0 +1,15 @@
+{% extends 'aplicacion/repuestos_list.html' %}
+
+{% block titulo %}
+    <h1 class="mb-5">Buscar Repuestos</h1>
+{% endblock titulo %}
+    
+
+{% block contenido %}
+<form action="{% url 'buscarRepuestos' %}" method="get">
+    {% csrf_token %}
+
+    <p>Repuesto a buscar: <input type="text" name="buscar" id="buscar"></p>
+    <input type="submit" value="Buscar">
+</form>
+{% endblock contenido %}

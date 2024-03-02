@@ -1,0 +1,52 @@
+{% extends 'aplicacion/home.html' %}  <!-- Exrendemos el html de Home a esta página-->
+
+{% block descripcion %}
+<h1> Lista de Proveedores </h1> 
+{% endblock descripcion %}
+
+{% block contenido %}
+<a href="http://localhost:8000/aplicacion/proveedor_create/" class="btn btn-primary">Agregar Proveedor</a> <!-- Boton para redireccionar la página-->
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Fono</th>
+                <th>Email</th>
+                <th>Modificar/Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for p in proveedores_list %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.nombre }}</td>
+                <td>{{ p.direccion }}</td>
+                <td>{{ p.fono }}</td>
+                <td>{{ p.email }}</td>
+                <td>
+                    <a
+                    href="{% url 'proveedor_update' p.id %}"
+                    class="btn btn-primary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                  </a>
+                  <a
+                    href="{% url 'proveedor_delete' p.id %}"
+                    class="btn btn-danger"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                  </a>  
+
+
+
+                </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}
+    
+    

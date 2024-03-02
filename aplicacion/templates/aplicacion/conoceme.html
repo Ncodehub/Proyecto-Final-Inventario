@@ -1,0 +1,36 @@
+{% extends 'aplicacion/home.html' %}  <!-- Extendemos el html de Home a esta página-->
+
+{% block descripcion %}
+    
+{% endblock descripcion %}
+
+{% block contenido %}
+<section id="about">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Mi nombre es Nicolás Castro</h2>
+                <p class="lead">Ingeniero en Automatización y Control Industrial</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services section-->
+<section class="bg-light" id="services">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Acerca de mí</h2>
+                <style>
+                    .descripcion-texto {
+                        text-align: justify;
+                    }
+                </style>
+                <div class="descripcion-texto">
+                <p>Me presento, Nicolás Castro, tengo 31 años de edad y de profesion me desempeño como Ingeniero en Automatización y Control Industrial con una sólida trayectoria en diversas áreas tecnológicas e industriales, respaldada por más de 7 años de experiencia en el sector. Mi pasión por la innovación y la busqueda conste de conocimiento me lleva siempre estar en busca de nuevos desafios, como es el caso de este mundo de la programación y lenguaje Python. El mundo de programación siempre ha sido un ambito el cual me da despertado mucho interes, es por ello que dentro de mi experiencia laboral he logrado llevar acabo diversos proyectos a nivel de desarrollador, pero siempre de un punto de vista autodidacta en los distintos lengiajes en los cuales he logrado desarrollar diversas soluciones tecnologicas. Ese es el motivo que me impulso a aventurarme y desafiarme en depurar todo este conocimiento a nivel de programación y que mejor que hacerlo en el lenguaje que más adopte y gusto, como es python. </p>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contenido %}

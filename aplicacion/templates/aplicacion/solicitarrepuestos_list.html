@@ -1,0 +1,32 @@
+{% extends 'aplicacion/home.html' %}  <!-- Exrendemos el html de Home a esta página-->
+
+{% block descripcion %}
+<h1> Lista de Solicitudes </h1> 
+{% endblock descripcion %}
+
+{% block contenido %}
+<a href="http://localhost:8000/aplicacion/sol_repuesto_create/" class="btn btn-primary">Solicitar Repuesto</a> <!-- Boton para redireccionar la página-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Cantidad</th>
+                <th>Fecha Solicitud</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for s in solicitarrepuestos_list  %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.nombre }}</td>
+                <td>{{ s.marca }}</td>
+                <td>{{ s.cantidad }}</td>
+                <td>{{ s.fechasolicitud }}</td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}
+    

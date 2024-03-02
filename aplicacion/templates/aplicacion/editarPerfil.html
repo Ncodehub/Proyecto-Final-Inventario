@@ -1,0 +1,19 @@
+{% extends 'aplicacion/home.html' %}  <!-- Exrendemos el html de Home a esta página-->
+
+{% block descripcion %}
+<h1> Editar Perfil </h1> 
+{% endblock descripcion %}
+
+{% block contenido %}
+
+<form action="" method = "post">
+    {% csrf_token %} <!-- Token de seguridad-->
+    
+    <table>
+        {{form.as_table}} <!-- Renderizo el formulario en formato tabla-->
+    </table>
+    <input type="submit" value="Editar Perfil">
+</form>    
+
+{% endblock contenido %}
+    

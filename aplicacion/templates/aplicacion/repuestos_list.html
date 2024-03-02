@@ -1,0 +1,50 @@
+{% extends 'aplicacion/home.html' %}  <!-- Exrendemos el html de Home a esta página-->
+
+{% block descripcion %}
+<h1> Lista de Inventario </h1> 
+{% endblock descripcion %}
+
+{% block contenido %}
+<a href="http://localhost:8000/aplicacion/buscar/" class="btn btn-primary">Buscar Repuestos</a> <!-- Boton para redireccionar la página-->
+<a href="http://localhost:8000/aplicacion/repuestos_create/" class="btn btn-primary">Agregar Repuesto</a> <!-- Boton para redireccionar la página-->
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Modificar/Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for r in repuestos_list  %}
+            <tr>
+                <td>{{ r.id }}</td>
+                <td>{{ r.nombre }}</td>
+                <td>{{ r.marca }}</td>
+                <td>{{ r.precio }}</td>
+                <td>{{ r.cantidad }}</td>
+                <td>
+                    <a
+                    href="{% url 'repuestos_update' r.id %}"
+                    class="btn btn-primary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                  </a>
+                  <a
+                    href="{% url 'repuestos_delete' r.id %}"
+                    class="btn btn-danger"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                  </a>  
+                </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}
+    
+    

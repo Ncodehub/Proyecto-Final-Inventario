@@ -4,6 +4,7 @@
 # Versión: Proyecto Final
 # Usuario administrador: -usuario 	: admin
 			 -contraseña	: nicolas01
+# link video explicativo : https://www.youtube.com/watch?v=EUO5sUOYClY&ab_channel=Nicol%C3%A1sCastro
 
 # Aplicacion que permite la gestion de inventario de una plata productiva o cual negocio que lo requiera.
     Los items a poder registrar son los siguientes: 
